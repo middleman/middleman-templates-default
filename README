@@ -1,0 +1,1 @@
+# Default Middleman Project Template
