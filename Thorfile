@@ -4,8 +4,6 @@ module Middleman
   class Generator < ::Thor::Group
     include ::Thor::Actions
 
-    class_option :default, type: :boolean
-
     source_root File.expand_path(File.dirname(__FILE__))
 
     def copy_default_files
@@ -13,15 +11,15 @@ module Middleman
     end
 
     def ask_about_compass
-      @use_compass = should?('Do you want to use Compass?')
+      @use_compass = yes?('Do you want to use Compass?')
     end
 
     def ask_about_sprockets
-      @use_sprockets = should?('Do you want to use the Asset Pipeline?')
+      @use_sprockets = yes?('Do you want to use the Asset Pipeline?')
     end
 
     def ask_about_livereload
-      @use_livereload = should?('Do you want to use LiveReload?')
+      @use_livereload = yes?('Do you want to use LiveReload?')
     end
 
     def build_gemfile
@@ -46,15 +44,9 @@ module Middleman
     end
 
     def ask_about_rackup
-      if should?('Do you want a Rack-compatible config.ru file?')
+      if yes?('Do you want a Rack-compatible config.ru file?')
         template 'optional/config.ru', 'config.ru'
       end
-    end
-
-    protected
-
-    def should?(msg)
-      options[:default] || yes?(msg)
     end
   end
 end
