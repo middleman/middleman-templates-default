@@ -54,7 +54,7 @@ module Middleman
     protected
 
     def should?(msg)
-      default || yes?(msg)
+      options[:default] || yes?(msg)
     end
   end
 end
