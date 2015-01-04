@@ -3,8 +3,11 @@ title: Welcome to Middleman
 ---
 
 <div class="welcome">
+  <div class="logo">
+    <%= image_tag "/images/middleman-logo.svg" %>
+  </div>
   <h1>Middleman is Watching</h1>
   <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
+    <%= link_to "Read Online Documentation", "http://middlemanapp.com/", target: "_blank" %>
   </p><!-- .doc -->
 </div><!-- .welcome -->
