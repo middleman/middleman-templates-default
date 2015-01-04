@@ -1,21 +1,3 @@
-module Sup
-  class Test < ::Thor::Group
-    include ::Thor::Actions
-
-    add_runtime_options!
-
-    argument :path, :type => :string
-
-    def hello
-      #::Thor::Util.load_thorfile('generator.rb')
-
-      inside path do
-        invoke 'middleman:generator'
-      end
-    end
-  end
-end
-
 require 'thor/group'
 
 module Middleman
