@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "normalize";
 
 body {
   background: #ECC561;
@@ -25,26 +26,26 @@ h1 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   font-weight: 300;
-}
 
-.doc a {
-  border: 1px solid white;
-  border-radius: 3px;
-  padding: 0.75em 0.7em;
-  color: white;
-  text-decoration: none;
-  transition: color 0.1s linear;
-}
-
-.doc a:hover {
-  background: rgba(0,0,0,0.2);
-  color: white;
-  transition: all 0.15s linear;
+  a {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 0.75em 0.7em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.1s linear;
+    &:hover {
+      background: rgba(0,0,0,0.2);
+      color: white;
+      transition: all 0.15s linear;
+    }
+  }
 }
 
 .welcome {
   -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s; }
+  -webkit-animation-duration: .9s;
+}
 
 @-webkit-keyframes welcome {
   from {

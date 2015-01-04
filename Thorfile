@@ -7,7 +7,7 @@ module Sup
     argument :path, :type => :string
 
     def hello
-      ::Thor::Util.load_thorfile('generator.rb')
+      #::Thor::Util.load_thorfile('generator.rb')
 
       inside path do
         invoke 'middleman:generator'
