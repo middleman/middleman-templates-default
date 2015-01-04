@@ -4,7 +4,7 @@ module Middleman
   class Generator < ::Thor::Group
     include ::Thor::Actions
 
-    class_option :default
+    class_option :default, type: :boolean
 
     source_root File.expand_path(File.dirname(__FILE__))
 
