@@ -28,18 +28,18 @@ module Middleman
       end
 
       if @use_compass && @use_sprockets
-        insert_into_file 'Gemfile', "gem 'middleman'\n", after: "# Middleman Gems\n"
+        insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0.rc.1'\n", after: "# Middleman Gems\n"
       else
         if @use_compass
-          insert_into_file 'Gemfile', "gem 'middleman-compass'\n", after: "# Middleman Gems\n"
+          insert_into_file 'Gemfile', "gem 'middleman-compass', '>= 4.0.0.rc.1'\n", after: "# Middleman Gems\n"
         end
 
         if @use_sprockets
-          insert_into_file 'Gemfile', "gem 'middleman-sprockets'\n", after: "# Middleman Gems\n"
+          insert_into_file 'Gemfile', "gem 'middleman-sprockets', '>= 4.0.0.rc.1'\n", after: "# Middleman Gems\n"
         end
 
-        insert_into_file 'Gemfile', "gem 'middleman-cli'\n", after: "# Middleman Gems\n"
-        insert_into_file 'Gemfile', "gem 'middleman-core'\n", after: "# Middleman Gems\n"
+        insert_into_file 'Gemfile', "gem 'middleman-cli', '>= 4.0.0.rc.1'\n", after: "# Middleman Gems\n"
+        insert_into_file 'Gemfile', "gem 'middleman-core', '>= 4.0.0.rc.1'\n", after: "# Middleman Gems\n"
       end
     end
 
