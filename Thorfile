@@ -19,7 +19,7 @@ module Middleman
         insert_into_file 'Gemfile', "gem 'middleman-livereload'\n", after: "# Middleman Gems\n"
       end
 
-      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0.rc.1'\n", after: "# Middleman Gems\n"
+      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0.rc.2'\n", after: "# Middleman Gems\n"
     end
 
     def ask_about_rackup
