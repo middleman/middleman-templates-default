@@ -10,16 +10,25 @@ module Middleman
       directory 'template', '.', exclude_pattern: /\.DS_Store$/
     end
 
+    def ask_about_compass
+      @use_compass = yes?('Do you want to use Compass?')
+    end
+
     def ask_about_livereload
       @use_livereload = yes?('Do you want to use LiveReload?')
     end
 
     def build_gemfile
-      if @use_livereload
-        insert_into_file 'Gemfile', "gem 'middleman-livereload'\n", after: "# Middleman Gems\n"
+      if @use_compass
+        insert_into_file 'Gemfile', "gem 'middleman-compass', '>= 4.0.0.rc'\n", after: "# Middleman Gems\n"
       end
 
-      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0.rc.2'\n", after: "# Middleman Gems\n"
+      if @use_livereload
+        insert_into_file 'Gemfile', "gem 'middleman-livereload'\n", after: "# Middleman Gems\n"
+        insert_into_file 'config.rb', "activate :livereload\n", after: "# General configuration\n"
+      end
+
+      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0.rc'\n", after: "# Middleman Gems\n"
     end
 
     def ask_about_rackup

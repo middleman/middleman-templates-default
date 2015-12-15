@@ -32,6 +32,8 @@ page '/*.txt', layout: false
 #   end
 # end
 
+# General configuration
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
