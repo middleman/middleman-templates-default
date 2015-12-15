@@ -25,11 +25,11 @@ module Middleman
 
       if @use_livereload
         insert_into_file 'Gemfile', "gem 'middleman-livereload'\n", after: "# Middleman Gems\n"
-        insert_into_file 'config.rb', <<-eos, after: "# General configuration\n"
+        insert_into_file 'config.rb', <<eos, after: "# General configuration\n"
           # Reload the browser automatically whenever files change
-          # configure :development do
-          #   activate :livereload
-          # end
+          configure :development do
+            activate :livereload
+          end
         eos
       end
 
