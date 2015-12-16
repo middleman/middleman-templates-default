@@ -20,7 +20,7 @@ module Middleman
 
     def build_gemfile
       if @use_compass
-        insert_into_file 'Gemfile', "gem 'middleman-compass', '>= 4.0.0.rc'\n", after: "# Middleman Gems\n"
+        insert_into_file 'Gemfile', "gem 'middleman-compass', '>= 4.0.0'\n", after: "# Middleman Gems\n"
       end
 
       if @use_livereload
@@ -34,7 +34,7 @@ end
 eos
       end
 
-      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0.rc'\n", after: "# Middleman Gems\n"
+      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0'\n", after: "# Middleman Gems\n"
     end
 
     def ask_about_rackup
