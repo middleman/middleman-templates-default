@@ -24,7 +24,7 @@ module Middleman
       end
 
       if @use_livereload
-        insert_into_file 'Gemfile', "gem 'middleman-livereload'\n", after: "# Middleman Gems\n"
+        insert_into_file 'Gemfile', "gem 'middleman-livereload', '~> 3.4'\n", after: "# Middleman Gems\n"
         insert_into_file 'config.rb', <<-eos, after: "# General configuration\n"
 
 # Reload the browser automatically whenever files change
@@ -34,7 +34,7 @@ end
 eos
       end
 
-      insert_into_file 'Gemfile', "gem 'middleman', '>= 4.0.0'\n", after: "# Middleman Gems\n"
+      insert_into_file 'Gemfile', "gem 'middleman', '~> 4.2'\n", after: "# Middleman Gems\n"
     end
 
     def ask_about_rackup
