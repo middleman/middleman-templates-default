@@ -10,19 +10,11 @@ module Middleman
       directory 'template', '.', exclude_pattern: /\.DS_Store$/
     end
 
-    def ask_about_compass
-      @use_compass = yes?('Do you want to use Compass?')
-    end
-
     def ask_about_livereload
       @use_livereload = yes?('Do you want to use LiveReload?')
     end
 
     def build_gemfile
-      if @use_compass
-        insert_into_file 'Gemfile', "gem 'middleman-compass', '>= 4.0.0'\n", after: "# Middleman Gems\n"
-      end
-
       if @use_livereload
         insert_into_file 'Gemfile', "gem 'middleman-livereload'\n", after: "# Middleman Gems\n"
         insert_into_file 'config.rb', <<-eos, after: "# General configuration\n"
@@ -44,4 +36,3 @@ eos
     end
   end
 end
-
